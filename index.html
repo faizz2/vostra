@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vostra</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+  </head>
+  <body>
+    <main>
+      <div class="title">
+        <h1>
+          Juara, <br />
+          Itu <span>Hakmu</span>.
+        </h1>
+        <p>
+          Kelola poin, jadwal, dan <br />
+          pemenang dengan lebih mudah.
+        </p>
+      </div>
+
+      <div class="items">
+        <div class="item jadwal" id="jadwalCard">
+          <div class="content-container">
+            <h2>
+              Jadwal <br />
+              Lomba
+            </h2>
+            <p>
+              Lihat dan kelola semua <br />
+              jadwal perlombaan.
+            </p>
+            <button class="cta">
+              <span class="material-symbols-outlined" style="font-size: 16px">
+                arrow_forward_ios
+              </span>
+            </button>
+          </div>
+          <div class="icon-container">
+            <span class="material-symbols-outlined" style="font-size: 5rem">
+              event_note
+            </span>
+          </div>
+        </div>
+
+        <div class="item input">
+          <div class="content-container" id="inputCard">
+            <h2>
+              Input <br />
+              Point
+            </h2>
+            <p>
+              Input poin peserta <br />
+              dengan cepat dan akurat.
+            </p>
+            <button class="cta">
+              <span
+                class="material-symbols-outlined"
+                style="font-size: 16px; color: #f5f5f5"
+              >
+                arrow_forward_ios
+              </span>
+            </button>
+          </div>
+          <div class="icon-container">
+            <span class="material-symbols-outlined" style="font-size: 5rem">
+              contract_edit
+            </span>
+          </div>
+        </div>
+
+        <div class="item leaderboard">
+          <div class="content-container" id="leaderboard-card">
+            <h2>Leaderboard</h2>
+            <p>
+              Pantau perolehan <br />
+              poin secara langsung.
+            </p>
+            <button class="cta">
+              <span class="material-symbols-outlined" style="font-size: 16px">
+                arrow_forward_ios
+              </span>
+            </button>
+          </div>
+          <div class="icon-container">
+            <span class="material-symbols-outlined" style="font-size: 5rem">
+              leaderboard
+            </span>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="js/main.js"></script>
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module">
+      import { createNavbar } from "./js/navbar.js";
+      createNavbar("Vostra");
+    </script>
+  </body>
+</html>

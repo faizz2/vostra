@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leaderboard</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/leaderboard.css" />
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header id="header" class="header">
+      <div id="back-button"></div>
+      <div class="title">
+        <h1>Leaderboard</h1>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="header-container">
+        <!-- Filter tabs sesuai gambar -->
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-category="anak">Anak</button>
+          <button class="filter-tab" data-category="orang-tua">
+            Orang Tua
+          </button>
+          <button class="filter-tab" data-category="panitia">Panitia</button>
+        </div>
+
+        <!-- Chart container untuk visualisasi -->
+        <div class="chart-container">
+          <div class="chart-bar" id="bar-2">
+            <div class="bar-label">-</div>
+          </div>
+          <div class="chart-bar" id="bar-1">
+            <div class="bar-label">-</div>
+          </div>
+          <div class="chart-bar" id="bar-3">
+            <div class="bar-label">-</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Leaderboard list -->
+      <div class="leaderboard-wrapper">
+        <div id="leaderboard">
+          <div class="loading">Memuat data leaderboard...</div>
+        </div>
+      </div>
+    </main>
+
+    <script type="module">
+      import { createBackButton } from "../components/backButton.js";
+      const backbutton = document.getElementById("back-button");
+      backbutton.appendChild(createBackButton());
+    </script>
+    <script type="module">
+      import { createNavbar } from "../js/navbar.js";
+      createNavbar("Vostra");
+    </script>
+    <script type="module" src="/js/leaderboard.js"></script>
+  </body>
+</html>
