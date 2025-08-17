@@ -149,7 +149,7 @@ const loadLeaderboard = async (filter = "anak") => {
       leaderboard = leaderboard.filter((item) => item.kategori === "anak");
     } else if (filter === "orang-tua") {
       leaderboard = leaderboard.filter(
-        (item) => item.kategori === "orang tua" || item.kategori === "orang_tua"
+        (item) => item.kategori === "orang tua" || item.kategori === "orangtua"
       );
     } else if (filter === "panitia") {
       leaderboard = leaderboard.filter((item) => item.kategori === "panitia");
