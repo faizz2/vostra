@@ -137,10 +137,12 @@ form.addEventListener("submit", async (e) => {
     showSuccessPopup("Data berhasil disimpan!");
 
     const lombaValue = data.lomba;
+    const kategoriValue = data.kategori;
     form.reset();
     document.getElementById("lomba").value = lombaValue;
+    document.getElementById("kategori").value = kategoriValue;
 
-    await cekSelesaiLomba(lombaValue);
+    await cekSelesaiLomba(lombaValue, kategoriValue);
   } catch (error) {
     console.error("Gagal menyimpan data", error);
   }
@@ -160,8 +162,13 @@ function showSuccessPopup(message) {
 }
 
 // ✅ fungsi cek sesi selesai
-async function cekSelesaiLomba(lomba) {
-  const q = query(collection(db, "hasil_lomba"), where("lomba", "==", lomba));
+async function cekSelesaiLomba(lomba, kategori) {
+  const q = query(
+    collection(db, "hasil_lomba"),
+    where("lomba", "==", lomba),
+    where("kategori", "==", kategori) // bisa gabungin langsung daripada bikin 2 query
+  );
+
   const snapshot = await getDocs(q);
 
   if (snapshot.empty) return;
